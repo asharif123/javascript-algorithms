@@ -372,6 +372,17 @@ console.log(lastNonRepeatingLetter("James Reiherxfiles")); //return l
 console.log(lastNonRepeatingLetter("Welcome to the real world meh")); //return d
 console.log(lastNonRepeatingLetter("what a wonderful day it has been")); //return b
 
+// find last repeating element
+// take input argument, make it lowerCase, replace all whitespaces, and split it
+// use filter to filter out all letters in sentence by iterating thru each character and corresponding index
+//if first occurence of character is not equal to last occurence of character, filter those characters
+//return last index of filtered array which is the last repeating letter in filtered array
+const lastRepeatingLetter = (sentence) => {
+    let newArray = sentence.toLowerCase().replaceAll(' ','').split('');
+    let filteredArray = newArray.filter((letter) => newArray.indexOf(letter) !== newArray.lastIndexOf(letter));
+    return filteredArray[filteredArray.length-1];
+}
+
 
 // write a function that takes in a string, and returns an object with key value pairs counting how many times each character occurred.
 
