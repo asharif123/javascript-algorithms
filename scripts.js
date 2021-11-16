@@ -231,39 +231,39 @@ Output: undefined
 // if the total of that element we are analyzing is larger than 1, return that letter
 // if they are all unique, return undefined.
 
-// function firstDuplicate(array) {
-//     var uniqueArray = new Set(array);
-//     for (value of uniqueArray) {
-//         var total = 0;
-//         for (var i = 0; i < array.length; i++) {
-//             if (array[i] === value) {
-//                 total += 1
-//             }
-//         }
-//         if (total > 1) {
-//             return value;
-//         }
-//     }
-//     return undefined;
-// }
+function firstDuplicate(array) {
+    var uniqueArray = new Set(array);
+    for (value of uniqueArray) {
+        var total = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                total += 1
+            }
+        }
+        if (total > 1) {
+            return value;
+        }
+    }
+    return undefined;
+}
 
 // create array to store unique values
 // iterate thru every value in original array and add to new unique value array if it is not in unique array
 // if value is already in unique array, return that value
 // if we find every value in original is unique, return undefined
 
-// function firstDuplicate(array) {
-//     var uniqueArray = [];
-//     for (var i = 0; i < array.length; i++) {
-//          if (!uniqueArray.includes(array[i])) {
-//             uniqueArray.push(array[i]);
-//         }
-//         else {
-//             return array[i];
-//         }
-//     }
-//     return undefined;
-// }
+function firstDuplicate(array) {
+    var uniqueArray = [];
+    for (let i = 0; i < array.length; i++) {
+         if (!uniqueArray.includes(array[i])) {
+            uniqueArray.push(array[i]);
+        }
+        else {
+            return array[i];
+        }
+    }
+    return undefined;
+}
 
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -271,13 +271,13 @@ Output: undefined
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 // You can return the answer in any order.
-// var twoSum = function(nums, target) {
-//     for (let i = 0; i < nums.length; i++) {
-//         if (nums.includes(target-nums[i]) && i !== nums.indexOf(target-nums[i])) {
-//             return [i, nums.indexOf(target-nums[i])]
-//         }
-//     }
-// };
+const twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums.includes(target-nums[i]) && i !== nums.indexOf(target-nums[i])) {
+            return [i, nums.indexOf(target-nums[i])]
+        }
+    }
+};
 
 // Write a function that takes in an array of integers and the array with duplicates removed
 
@@ -296,36 +296,82 @@ Output: undefined
 // put value in unique array if it does not already exist
 // return uniqueArray
 
-// const removeDuplicates = (originalArray) => {
-//     // const returnedArray = []; 
-//     // && means if part 1 is true, then execute and return part 2, else dont execute part 2
-//     // originalArray.forEach(item => (!returnedArray.includes(item)) ? returnedArray.push(item) : false)
+const removeDuplicates = (array) => {
+    return array.filter((value,index) => index == array.indexOf(value));
+}
 
-//     returnedArray = originalArray.filter((value,i) => i === originalArray.lastIndexOf(value))
-//     return returnedArray;
-// }
+console.log(removeDuplicates([1,2,3,2,5,5,4,2,4,14,22,24]))
 
-// console.log(removeDuplicates([1,2,2,3]));
-// console.log(removeDuplicates([1,23,4,5,6,7,12,22,2,22,23,3]));
-// console.log(removeDuplicates([4,5,4,4,7,5]));
+const removeDuplicates = (originalArray) => {
+    // const returnedArray = []; 
+    // && means if part 1 is true, then execute and return part 2, else dont execute part 2
+    // originalArray.forEach(item => (!returnedArray.includes(item)) ? returnedArray.push(item) : false)
+
+    returnedArray = originalArray.filter((value,i) => i === originalArray.lastIndexOf(value))
+    return returnedArray;
+}
+
+console.log(removeDuplicates([1,2,2,3]));
+console.log(removeDuplicates([1,23,4,5,6,7,12,22,2,22,23,3]));
+console.log(removeDuplicates([4,5,4,4,7,5]));
 
 // find the first nonrepeating character in an array (assume all lower case letters)
 // use filter method to filter only every unique value in an sentence
 // do this by taking original sentence, add the filter method, iterate every value/index and see if index of that value is equal to last occuring index of that value
 // creates new array of filtered values and return the first value in that index
-// function firstNonRepeatingLetter(string) { 
-//     let sentence = string.toLowerCase().replaceAll(' ', '').split('');
-//     // return sentence;
-//     //     returnedArray = originalArray.filter((value,i) => i === originalArray.lastIndexOf(value))
 
-//     let nonRepeatingCharacters = sentence.filter((letter,indexOfLetter) => ());
-//     return nonRepeatingCharacters;
-// }
-// console.log(firstNonRepeatingLetter("This is a test.")); //return h
-// console.log(firstNonRepeatingLetter("this hat is the greatest!")); //return g
-// console.log(firstNonRepeatingLetter("what a wonderful day it has been!"));
+// objective: filter all unique letters from array
+// use the filter function to filter all unique letters
+//since we don't care about whitespace, replace all whitespace in the sentence and make setence lowercase
+// using filter function, iterate thru each character in sentence once it has been split
+// if index of that character is equal to indexOf of first occurence of that letter and 
+//there are no more occurences of that letter after we find first occurence, we know it's unique and keep it
+// get the first index of that sentence to get first non repeating letter.
+const firstNonRepeatingLetter = (sentence) => {
+    const newArray = sentence.toLowerCase().replaceAll(' ', '').split('');
+    const splitArray = newArray.filter((character, index) => index === newArray.indexOf(character) && newArray.indexOf(character, index+1) === -1)
+    return splitArray[0];
+}
+
+console.log(firstNonRepeatingLetter("This is a test.")); //return h
+console.log(firstNonRepeatingLetter("this hat is the greatest!")); //return g
+console.log(firstNonRepeatingLetter("what a wonderful day it has been!")); //return o
 
 // **********************************************************************************
+
+// find first repeating element (assume input is string)
+//filter out all repeating elements in the sentence
+//first convert sentence to lowercase, replace all empty spaces, and convert to lowercase, them split 
+//using filter, iterate thru each character in array
+//filter out characters if indices after current character we are analyzing exists
+//return first index in filtered array
+const firstRepeatingLetter = (sentence) => {
+    const newArray = sentence.toLowerCase().replaceAll(' ', '').split('');
+    const filteredArray = newArray.filter((letter) => newArray.indexOf(letter) !== newArray.lastIndexOf(letter))
+    return filteredArray[0];     
+}
+
+console.log(firstRepeatingLetter("James Reiher")); //e
+console.log(firstRepeatingLetter("First Repeating Letter")); //i
+console.log(firstRepeatingLetter("Geeks for Geeks")); //g
+
+// find last nonrepeating element
+// take sentence argument, convert to lowercase, replace ' ' with '' and split
+// use filter function to filter all nonrepeating elements
+// using filter to filter thru each character and index, 
+//if current index we are at is equal to first occurence of current index and 
+// no more occurences of the current character we are at after current index, filter them out
+//return last index of filtered array
+const lastNonRepeatingLetter = (sentence) => {
+    const newArray = sentence.toLowerCase().replaceAll(' ', '').split('');
+    const filteredArray = newArray.filter((letter, index) => index === newArray.indexOf(letter) && newArray.indexOf(letter, index+1) === -1)
+    return filteredArray[filteredArray.length - 1]
+}
+
+console.log(lastNonRepeatingLetter("James Reiherxfiles")); //return l
+console.log(lastNonRepeatingLetter("Welcome to the real world meh")); //return d
+console.log(lastNonRepeatingLetter("what a wonderful day it has been")); //return b
+
 
 // write a function that takes in a string, and returns an object with key value pairs counting how many times each character occurred.
 
@@ -336,11 +382,12 @@ Output: undefined
 // if letter already exists in totalCount, increment its count else assign a 1
 // return object
 
-// function characterCount(string) {
-//     const array = string.split('');
-//     let totalCount = {};
-//     array.forEach((letter) => totalCount[letter] ? totalCount[letter]++ : totalCount[letter] = 1)
-//     return totalCount;
-// }
+const characterCount = (string) => {
+    const array = string.split('');
+    let totalCount = {};
+    array.forEach((letter) => totalCount[letter] ? totalCount[letter]++ : totalCount[letter] = 1)
+    return totalCount;
+}
 
-// console.log(characterCount("Hello World!"));
+console.log(characterCount("Hello World!"));
+console.log([1,2,2,3,2].indexOf(2))
