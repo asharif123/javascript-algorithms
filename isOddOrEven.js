@@ -6,7 +6,7 @@
 // if number is divisible by 2 and returns 0 as remainder, it's even
 // if number is not divisible by 2 and returns 1 as remainder, it's odd
 
-function isOddOrEven(number) {
+const isOddOrEven = (number) => {
     if (number % 2 === 0) {
         return `${number} is even!`;
     }

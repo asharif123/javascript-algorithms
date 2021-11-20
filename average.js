@@ -18,9 +18,9 @@
 // Input: [ 1.5, 3, 2.5, 1 ]
 // Output: 2
 
-function average(numbers) {
-    var total = 0;
-    for (var i = 0; i < numbers.length; i++) {
+const average = (numbers) => {
+    let total = 0;
+    for (let i = 0; i < numbers.length; i++) {
         total += numbers[i];
     }
 

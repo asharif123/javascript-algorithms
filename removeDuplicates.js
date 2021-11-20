@@ -3,18 +3,14 @@
 // // put value in unique array if it does not already exist
 // // return uniqueArray
 
-const removeDuplicates = (array) => {
-    return array.filter((value,index) => index == array.indexOf(value));
-}
+// const removeDuplicates = (array) => {
+//     return array.filter((value,index) => index == array.indexOf(value));
+// }
 
-console.log(removeDuplicates([1,2,3,2,5,5,4,2,4,14,22,24]))
+// console.log(removeDuplicates([1,2,3,2,5,5,4,2,4,14,22,24]))
 
 const removeDuplicates = (originalArray) => {
-    // const returnedArray = []; 
-    // && means if part 1 is true, then execute and return part 2, else dont execute part 2
-    // originalArray.forEach(item => (!returnedArray.includes(item)) ? returnedArray.push(item) : false)
-
-    returnedArray = originalArray.filter((value,i) => i === originalArray.lastIndexOf(value))
+    returnedArray = originalArray.filter((value,i) => i === originalArray.indexOf(value))
     return returnedArray;
 }
 

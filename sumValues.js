@@ -2,9 +2,9 @@
 // use for loop to iterate via each value in array
 // return total after all values have been added to total
 
-function sumValues(values) {
-    var total = 0;
-    for (var i = 0; i < values.length; i++) {
+const sumValues = (values) => {
+    let total = 0;
+    for (let i = 0; i < values.length; i++) {
         total += values[i];
     }
 

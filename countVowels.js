@@ -8,11 +8,11 @@
 // do this until we have looped thru every letter in sentence
 // return final count of vowels
 
-function countVowels(sentence) {
+const countVowels = (sentence) => {
     sentence = sentence.toLowerCase();
-    var totalVowels = 0;
-    var vowels = ["a", "e", "i", "o", "u"];
-    for (var i = 0; i < sentence.length; i++) {
+    let totalVowels = 0;
+    const vowels = ["a", "e", "i", "o", "u"];
+    for (let i = 0; i < sentence.length; i++) {
         if (vowels.includes(sentence[i])) {
             totalVowels += 1;
         }

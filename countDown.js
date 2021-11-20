@@ -4,8 +4,8 @@
 
 // take a value and ensure it's positive
 // use for loop to decrement value by 1 and print each value including 1
-function countDown(value) {
-    for (var i=value; i > 0; i--) {
+const countDown = (value) => {
+    for (let i=value; i > 0; i--) {
         console.log(i);
     }
 }

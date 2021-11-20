@@ -8,9 +8,9 @@ it is a palindrome. A **palindrome** is any string spelled the same forwards as 
 // if we hit letter that is not equal to its compliment, its not palindrome
 // we iterate until we hit middle letter and if we find each letter is equal to its compliment, it's palindrome
 
-function isPalindrome(word) {
+const isPalindrome = (word) => {
     word = word.toLowerCase();
-    for (var i = 0; i < (word.length - 1) / 2; i++) {
+    for (let i = 0; i < (word.length - 1) / 2; i++) {
         if (word[i] !== word[word.length - 1 - i]) {
             return `${word} is not a palindrome!`;
         }

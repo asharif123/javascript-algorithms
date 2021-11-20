@@ -7,9 +7,9 @@
 // iterate from 1 to 10, multiply with num and assign to new num
 // return final num solution
 
-function factorial(value) {
-    var num = 1;
-    for (var i = 1; i <= value; i++) {
+const factorial = (value) => {
+    let num = 1;
+    for (let i = 1; i <= value; i++) {
         num *= i;
     }
     

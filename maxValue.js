@@ -5,9 +5,9 @@
 // continue doing this until end of array and return current maximum
 
 function maxValue(arr) {
-    var max = arr[0];
-    for (var i = 1; i < arr.length; i++) {
-        var currentNum = arr[i];
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        let currentNum = arr[i];
         if (max < currentNum) {
             max = currentNum;
         }
@@ -16,4 +16,4 @@ function maxValue(arr) {
 }
 
 console.log(maxValue([6,9,11,13]));
-console.log(maxValue([6,9,11,13,25,6,1,7,-9,19,24]));
+console.log(maxValue([6,9,11,13,25,6,1,57,-9,19,24]));
