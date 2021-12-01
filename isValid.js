@@ -35,3 +35,25 @@
 
 // 1 <= s.length <= 104
 // s consists of parentheses only '()[]{}'.
+
+// create an empty list to hold all opening parentheses, square and curly brackets
+// do a for loop and add each opening parentheses, square and curly brackets that is encountered
+// if we enounter its corresponding closing parentheses, square or curly brackets and last element is its:
+// cont: corr opening parentheses, square and curly brackets, remove corr opening bracket from array
+// at end of for loop, if array is empty, return true meaning it's balanced
+// if not empty return false
+
+const isValid = (characters) => {
+    const openingBrackets = [];
+    for (let i = 0; i < characters.length; i++) {
+        if (characters[i] === "(" || characters[i] === "[" || characters[i] === "{") {
+            openingBrackets.push(characters[i]);
+        }
+
+        // else if we encounter ")" and last element in array is corresponding ")", remove from array
+        
+    }
+
+        
+
+}
