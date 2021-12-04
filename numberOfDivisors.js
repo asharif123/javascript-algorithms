@@ -53,8 +53,8 @@ const numberofDivisors = (number) => {
     return total;
 }
 
-console.log(numberofDivisors(4));
-console.log(numberofDivisors(1));
-console.log(numberofDivisors(5));
-console.log(numberofDivisors(12));
-console.log(numberofDivisors(30));
+// console.log(numberofDivisors(4));
+// console.log(numberofDivisors(1));
+// console.log(numberofDivisors(5));
+// console.log(numberofDivisors(12));
+console.log(numberofDivisors(30000000));
