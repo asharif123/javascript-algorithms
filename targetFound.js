@@ -46,11 +46,18 @@
 //if target value equals to midpoint value, return midpoint
 //Ex: // [1,4,5,11,22], 13
 //assign midpoint to 5, left to 1 and right to 22
-//since target is greater than midpoint, assign left to old midpoint so now [5,11,22], 13
+//since target is greater than midpoint, assign left to old midpoint + 1so now [5,11,22], 13
 //assign new midpoint to 11, left is now 5 and right still 22
 //target is greater than midpoint, shift left to point to 11, midpoint now 11 and right still 22 so now [11,22], 13
 //since target is greater than new midpoint 11, shift left to point to 22, right still pointing to 22 so now [22], 13
 //now that left and right are pointing to same value, return index of that value (or mid)
+
+//another ex: [4,8,15,16,23,42], 10
+//assign left to 4, right to 42, and midpoint to 16
+//since target is less than midponit (16), move right to old midpoint so now [4,8,15,16], 10 and new midpoint is 15,
+// since target is less than 15, move right to point to 15, left still 4 and new midpoint is 8 so [4,8,15], 10
+//since target is greater than 8, move left to point to 15, leave right to point to 15 so now [15], 10
+// since left and right point to same value, return midpoint
 
 const targetFound = (nums, target) => {
 
