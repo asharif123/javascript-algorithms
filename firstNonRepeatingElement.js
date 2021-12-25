@@ -11,10 +11,20 @@
 //there are no more occurences of that letter after we find first occurence, we know it's unique and keep it
 // get the first index of that sentence to get first non repeating letter.
 const firstNonRepeatingLetter = (sentence) => {
-    const newArray = sentence.toLowerCase().replaceAll(' ', '').split('');
-    const splitArray = newArray.filter((character, index) => index === newArray.indexOf(character) && newArray.indexOf(character, index+1) === -1)
-    return splitArray[0];
+    // const newArray = sentence.toLowerCase().replaceAll(' ', '').split('');
+    const newSentence = sentence.toLowerCase().replaceAll(' ', '');
+    for (let i = 0; i < newSentence.length; i++) {
+        if (i === newSentence.indexOf(newSentence[i]) && newSentence.indexOf(newSentence[i], i+1, newSentence.length) === -1) {
+            return newSentence[i]
+            
+        }
+    
+    // const splitArray = newArray.filter((character, index) => index === newArray.indexOf(character) && newArray.indexOf(character, index+1) === -1)
+    // return splitArray;
 }
+}
+
+
 
 console.log(firstNonRepeatingLetter("This is a test.")); //return h
 console.log(firstNonRepeatingLetter("this hat is the greatest!")); //return g

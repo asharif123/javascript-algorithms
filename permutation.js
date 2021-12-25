@@ -42,9 +42,9 @@
 
 //STEPS:
 //take each letter in sub and create object, if letter is in object increment its count, else assign to 1
-//loop through each letter in str and if letter in sub exists, decrement its count
-//at end of for loop, do another for loop on sub and see if each letter in sub is equal to count of 0 (0 occurences) in object
-//if the count of letters in object is greater than 0 for any letter in object, return false
+//loop through each letter in str and if letter in sub exists, decrement its count from object
+//at end of for loop, do another for loop on sub and see if each letter in sub string is equal to count of 0 (0 occurences) in object
+//if the count of any letter in object is greater than 0 for any letter in object, return false
 //else if count of every letter in object is 0, return true
 
 const permutationSubstring = (str, sub) => {
@@ -84,3 +84,4 @@ console.log(permutationSubstring("tbacowa", "bat"))
 console.log(permutationSubstring("nAtsuiPlwuan", "Austin"))
 console.log(permutationSubstring("nnhsuieaero", "summer"))
 console.log(permutationSubstring("octmantisplantic", "atlantic ocean"))
+
