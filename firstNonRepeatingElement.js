@@ -26,6 +26,13 @@ const firstNonRepeatingLetter = (sentence) => {
 
 
 
-console.log(firstNonRepeatingLetter("This is a test.")); //return h
-console.log(firstNonRepeatingLetter("this hat is the greatest!")); //return g
-console.log(firstNonRepeatingLetter("what a wonderful day it has been!")); //return o
+// console.log(firstNonRepeatingLetter("This is a test.")); //return h
+// console.log(firstNonRepeatingLetter("this hat is the greatest!")); //return g
+// console.log(firstNonRepeatingLetter("what a wonderful day it has been!")); //return o
+
+const word = "thisisatest!"
+for (let i = 0; i < word.length; i++) {
+    if (i === word.lastIndexOf(word[i])) {
+        console.log(word[i])
+    }
+}
