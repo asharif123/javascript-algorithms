@@ -82,7 +82,7 @@
 //if length of split list is even, double value in each even indexed value.
 //after doing steps 3 or 4 depending on length of array, use .map to take each value and map to new array having original and doubled values
 //do a for loop on the new array of values, if the value is greater than or equal to ten, subtract by 9 and add to total
-//else, just directly add the value to the total
+//else, just directly add the value in the array to the total
 //do a check if the total % 10 divides evenly
 const creditCardValidator = (n) => {
     let total = 0;
@@ -90,6 +90,7 @@ const creditCardValidator = (n) => {
     let mappedStringNumber = stringNumber.map((value, index) => {
         //IF LENGTH OF NUMBER IS EVEN
         if (stringNumber.length % 2 === 0) {
+            //DOUBLE EVERY value that is even indexed
             if (index % 2 === 0) {
                 return parseInt(stringNumber[index]) * 2;
             }
@@ -99,6 +100,7 @@ const creditCardValidator = (n) => {
         }
         //IF LENGTH OF NUMBER IS ODD
         else {
+            //DOUBLE every value that is odd indexed!
             if (index % 2 === 1) {
                 return parseInt(stringNumber[index]) * 2;
 
@@ -122,6 +124,14 @@ const creditCardValidator = (n) => {
 
   
 }
+
+// function validate(n){
+//     return [...String(n)]
+//       .reverse()
+//       .map((val, index) => index % 2 ? val * 2 : Number(val))
+//       .map((val, index) => val > 9 ? val - 9 : val)
+//       .reduce((prev, curr) => prev + curr) % 10 ? false : true;
+//   }
 
 console.log(creditCardValidator(123));
 console.log(creditCardValidator(1));
