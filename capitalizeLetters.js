@@ -11,9 +11,9 @@ const capitalizeLetters = (sentence) => {
     let newSentence = '';
     let newArray = sentence.split(' ');
     for (let i = 0; i < newArray.length; i++) {
-        newSentence += newArray[i][0].toUpperCase() + newArray[i].substring(1) + ' '
+        newSentence += newArray[i][0].toUpperCase() + newArray[i].slice(1, newArray[i].length) + ' '
     }
-    return newSentence;
+    return newSentence.trim();
 }
 
 console.log(capitalizeLetters("this is a sentence!"))
